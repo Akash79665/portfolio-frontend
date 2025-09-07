@@ -1,0 +1,99 @@
+.contact-container {
+  padding: 30px;
+  text-align: center;
+}
+
+.contact-container h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #1e293b;
+}
+
+.contact-card {
+  padding: 20px;
+  text-align: left;
+}
+
+.contact-card p {
+  font-size: 1.05rem;
+  color: #334155;
+  margin-bottom: 10px;
+}
+
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Base button style */
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between icon & text */
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  color: #fff;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* GitHub button */
+.social-btn.github {
+  background-color: #000; /* black */
+}
+
+.social-btn.github:hover {
+  background-color: #333; /* lighter black on hover */
+}
+
+/* LinkedIn button */
+.social-btn.linkedin {
+  background-color: #0077b5; /* LinkedIn blue */
+}
+
+.social-btn.linkedin:hover {
+  background-color: #005983; /* darker blue on hover */
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+/* Loading and error */
+.loading,
+.error-msg {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 40px auto;
+}
+
+.error-msg {
+  color: #e63946;
+  font-weight: bold;
+}
+
+
+.contact-link {
+  color: #2563eb; /* blue */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.contact-icon {
+  color: #1e293b;
+  margin-right: 6px;
+  font-size: 1.1rem;
+  vertical-align: middle;
+}
