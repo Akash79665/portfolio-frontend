@@ -37,7 +37,7 @@ html, body, #root {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* responsive column width */
-  gap: 20px;
+  gap: 20px; /* reduced gap */
   perspective: 1000px;
 }
 
@@ -46,6 +46,8 @@ html, body, #root {
   width: 100%;
   height: 450px;
   perspective: 1000px;
+  border-radius: 16px;   /* ✅ clip children corners */
+  overflow: hidden;      /* ✅ prevent overlap at edges */
 }
 
 .card-inner {
@@ -54,6 +56,8 @@ html, body, #root {
   height: 100%;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  border-radius: 16px;   /* ✅ match parent radius */
+  overflow: hidden;      /* ✅ clip front/back faces */
 }
 
 .project-card:hover .card-inner {
@@ -69,7 +73,7 @@ html, body, #root {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 16px;
+  border-radius: 16px;   /* ✅ same radius as parent */
 
   /* Frosted glass effect */
   background: rgba(255, 255, 255, 0.85);
@@ -206,39 +210,35 @@ html, body, #root {
     margin-bottom: 30px;
   }
 
-  /* Stack cards vertically */
+  /* Stack cards vertically with smaller gaps */
   .projects-grid {
-    display: flex;
+    display: flex;           /* use flex instead of grid */
     flex-direction: column;
-    gap: 16px;
-    align-items: center;
+    gap: 12px;               /* small gap between cards */
+    align-items: center;     /* center cards */
   }
 
   .project-card {
-    width: 100%;
-    max-width: 380px;
-    height: auto; /* no fixed height */
+    width: 100%;             /* full width */
+    height: auto;            /* remove fixed height */
   }
 
   .card-inner {
-    transform: none !important; /* disable flip effect */
-    height: auto;
+    height: auto;            /* dynamic height */
   }
 
   .card-front,
   .card-back {
-    position: relative;
-    height: auto;
-    backface-visibility: visible;
-    transform: none !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;      /* prevent overlap */
+    height: auto;            /* dynamic height */
+    justify-content: flex-start;
     padding: 15px;
   }
 
   .card-front img {
     width: 100%;
     height: auto;
-    max-height: 160px;
+    max-height: 160px;       /* limit image height */
     object-fit: cover;
     margin-bottom: 10px;
   }
