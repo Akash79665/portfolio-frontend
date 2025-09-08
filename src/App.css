@@ -1,29 +1,27 @@
 html, body, #root {
   height: 100%;
   width: 100%;
-  margin: 0;              /* ✅ remove default margins */
-  padding: 0;             /* ✅ remove default padding */
-  overflow-x: hidden;     /* ✅ prevent horizontal/diagonal scroll */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
-  box-sizing: border-box; /* ✅ consistent sizing */
+  box-sizing: border-box;
 }
 
 *, *::before, *::after {
-  box-sizing: inherit;    /* ✅ prevent accidental overflow */
+  box-sizing: inherit;
 }
 
-/* App container will handle navbar, content, footer */
 .app-container {
   flex: 1;
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 100vw;       /* ✅ stop container from stretching */
+  max-width: 100vw;
 }
 
-/* Optional: keep your logo animations */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -40,12 +38,8 @@ html, body, #root {
 }
 
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -65,4 +59,56 @@ html, body, #root {
 header,
 footer {
   width: 100%;
+}
+
+/* =========================
+   📱 Mobile Fixes (only additions)
+   ========================= */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .card {
+    padding: 1.2em;
+    margin: 10px 0;
+  }
+
+  /* Example grid if you use it */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 per row on tablet */
+    gap: 15px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr; /* stack on phone */
+  }
+
+  .card {
+    padding: 1em;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    height: 4em;
+    padding: 1em;
+  }
 }

@@ -28,6 +28,7 @@
   text-align: center;
   z-index: 2;
   animation: fadeIn 1.5s ease forwards;
+  padding: 0 15px; /* ✅ prevent text touching screen edges */
 }
 
 .banner-content h1 {
@@ -48,6 +49,7 @@
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
+  display: inline-block;
 }
 
 .banner-btn:hover {
@@ -68,4 +70,12 @@
 @media (max-width: 768px) {
   .banner-content h1 { font-size: 2rem; }
   .banner-content p { font-size: 1rem; }
+  .banner-btn { padding: 12px 25px; font-size: 0.9rem; }
+}
+
+/* ✅ Extra small screens (phones ≤480px) */
+@media (max-width: 480px) {
+  .banner-content h1 { font-size: 1.6rem; }
+  .banner-content p { font-size: 0.9rem; }
+  .banner-btn { padding: 10px 20px; font-size: 0.85rem; }
 }

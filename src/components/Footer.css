@@ -43,3 +43,24 @@
 .footer-icon {
   font-size: 1.2rem;
 }
+
+/* ✅ Responsive footer for mobile */
+@media (max-width: 600px) {
+  .footer {
+    padding: 15px 10px;
+  }
+
+  .footer-links {
+    gap: 15px; /* smaller gap */
+    flex-direction: column; /* stack links vertically */
+    align-items: center;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+
+  .footer-icon {
+    font-size: 1rem;
+  }
+}

@@ -58,3 +58,37 @@
   color: #475569;
   line-height: 1.5;
 }
+
+/* ---------------- RESPONSIVE FIXES ---------------- */
+@media (max-width: 768px) {
+  .skills-container {
+    padding: 30px 15px;
+  }
+
+  .skills-container h1 {
+    font-size: 2rem;  /* smaller headline */
+    margin-bottom: 30px;
+  }
+
+  .skills-grid {
+    gap: 20px;
+  }
+
+  .skill-card {
+    padding: 18px;
+  }
+
+  .skill-icon {
+    width: 50px;   /* smaller icons */
+    height: 50px;
+  }
+
+  .skill-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .skill-info {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}

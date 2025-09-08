@@ -190,17 +190,50 @@ html, body, #root {
   border-radius: 3px;
 }
 
-/* Responsive */
+/* ---------------- RESPONSIVE FIXES ---------------- */
 @media (max-width: 768px) {
   .home-container {
     padding: 40px 10px;
   }
-  .project-card {
-    height: auto;
+
+  .home-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
   }
+
+  .project-card {
+    height: auto; /* remove fixed height */
+  }
+
   .card-front,
   .card-back {
+    position: relative; /* stop overlapping issues */
     height: auto;
+    justify-content: flex-start;
+    padding: 15px;
+  }
+
+  .card-front img {
+    height: auto; /* let images scale naturally */
+    max-height: 180px;
+  }
+
+  .card-front h2,
+  .card-back h2 {
+    font-size: 1.1rem;
+  }
+
+  .project-desc li {
+    font-size: 0.85rem;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .links a {
+    width: 100%;
     justify-content: center;
   }
 }
