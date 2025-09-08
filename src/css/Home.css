@@ -41,13 +41,11 @@ html, body, #root {
   perspective: 1000px;
 }
 
-/* ---------------- CARD STYLES ---------------- */
+/* Project Card */
 .project-card {
   width: 100%;
   height: 450px;
   perspective: 1000px;
-  border-radius: 16px;    /* clip children */
-  overflow: hidden;       /* stop overlap corners */
 }
 
 .card-inner {
@@ -56,8 +54,6 @@ html, body, #root {
   height: 100%;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  border-radius: 16px;    /* match parent */
-  overflow: hidden;       /* ensure no bleed */
 }
 
 .project-card:hover .card-inner {
@@ -73,8 +69,7 @@ html, body, #root {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 16px;     /* ✅ same radius as parent */
-  overflow: hidden;        /* ✅ prevent overlap */
+  border-radius: 16px;
 
   /* Frosted glass effect */
   background: rgba(255, 255, 255, 0.85);
