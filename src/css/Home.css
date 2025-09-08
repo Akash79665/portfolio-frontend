@@ -37,7 +37,7 @@ html, body, #root {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* responsive column width */
-  gap: 20px; /* reduced gap */
+  gap: 20px;
   perspective: 1000px;
 }
 
@@ -206,35 +206,39 @@ html, body, #root {
     margin-bottom: 30px;
   }
 
-  /* Stack cards vertically with smaller gaps */
+  /* Stack cards vertically */
   .projects-grid {
-    display: flex;           /* use flex instead of grid */
+    display: flex;
     flex-direction: column;
-    gap: 12px;               /* small gap between cards */
-    align-items: center;     /* center cards */
+    gap: 16px;
+    align-items: center;
   }
 
   .project-card {
-    width: 100%;             /* full width */
-    height: auto;            /* remove fixed height */
+    width: 100%;
+    max-width: 380px;
+    height: auto; /* no fixed height */
   }
 
   .card-inner {
-    height: auto;            /* dynamic height */
+    transform: none !important; /* disable flip effect */
+    height: auto;
   }
 
   .card-front,
   .card-back {
-    position: relative;      /* prevent overlap */
-    height: auto;            /* dynamic height */
-    justify-content: flex-start;
+    position: relative;
+    height: auto;
+    backface-visibility: visible;
+    transform: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 15px;
   }
 
   .card-front img {
     width: 100%;
     height: auto;
-    max-height: 160px;       /* limit image height */
+    max-height: 160px;
     object-fit: cover;
     margin-bottom: 10px;
   }
@@ -261,4 +265,3 @@ html, body, #root {
     padding: 8px;
   }
 }
-
