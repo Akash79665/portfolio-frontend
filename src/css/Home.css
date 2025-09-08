@@ -206,46 +206,58 @@ html, body, #root {
     margin-bottom: 30px;
   }
 
+  /* Stack cards vertically with smaller gaps */
   .projects-grid {
-    grid-template-columns: 1fr; /* stack one card per row */
-    gap: 15px;                  /* smaller gap */
+    display: flex;           /* use flex instead of grid */
+    flex-direction: column;
+    gap: 12px;               /* small gap between cards */
+    align-items: center;     /* center cards */
   }
 
   .project-card {
-    height: auto; /* remove fixed height */
+    width: 100%;             /* full width */
+    height: auto;            /* remove fixed height */
+  }
+
+  .card-inner {
+    height: auto;            /* dynamic height */
   }
 
   .card-front,
   .card-back {
-    position: relative; /* prevent overlapping */
-    height: auto;
+    position: relative;      /* prevent overlap */
+    height: auto;            /* dynamic height */
     justify-content: flex-start;
     padding: 15px;
   }
 
   .card-front img {
     width: 100%;
-    height: auto;       /* responsive images */
-    max-height: 180px;
+    height: auto;
+    max-height: 160px;       /* limit image height */
     object-fit: cover;
+    margin-bottom: 10px;
   }
 
   .card-front h2,
   .card-back h2 {
     font-size: 1.1rem;
+    margin-bottom: 10px;
   }
 
   .project-desc li {
     font-size: 0.85rem;
+    margin-bottom: 5px;
   }
 
   .links {
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
   }
 
   .links a {
     width: 100%;
     justify-content: center;
+    padding: 8px;
   }
 }
