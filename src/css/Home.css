@@ -217,22 +217,25 @@ html, body, #root {
   .project-card {
     width: 100%;
     max-width: 380px;
-    height: auto; /* no fixed height */
+    height: auto; /* allow flexible height */
   }
 
   .card-inner {
-    transform: none !important; /* disable flip effect */
+    position: relative;   /* ✅ fix: stack naturally */
+    transform: none !important;
     height: auto;
   }
 
   .card-front,
   .card-back {
-    position: relative;
+    position: relative;   /* ✅ fix: no overlap */
+    width: 100%;
     height: auto;
     backface-visibility: visible;
     transform: none !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 15px;
+    margin-bottom: 12px; /* ✅ space between front & back */
   }
 
   .card-front img {
@@ -241,6 +244,7 @@ html, body, #root {
     max-height: 160px;
     object-fit: cover;
     margin-bottom: 10px;
+    border-radius: 12px;
   }
 
   .card-front h2,
