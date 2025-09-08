@@ -33,13 +33,15 @@ html, body, #root {
   color: #111;
 }
 
+/* Grid for project cards */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* responsive column width */
+  gap: 20px; /* reduced gap */
   perspective: 1000px;
 }
 
+/* Project Card */
 .project-card {
   width: 100%;
   height: 450px;
@@ -58,6 +60,7 @@ html, body, #root {
   transform: rotateY(180deg);
 }
 
+/* Card faces */
 .card-front,
 .card-back {
   position: absolute;
@@ -68,7 +71,7 @@ html, body, #root {
   backface-visibility: hidden;
   border-radius: 16px;
 
-  /* ✨ Semi-transparent frosted glass effect */
+  /* Frosted glass effect */
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -82,6 +85,7 @@ html, body, #root {
   box-sizing: border-box;
 }
 
+/* Front card content */
 .card-front img {
   width: 100%;
   height: 220px;
@@ -96,6 +100,7 @@ html, body, #root {
   color: #222;
 }
 
+/* Back card content */
 .card-back {
   transform: rotateY(180deg);
   justify-content: flex-start;
@@ -201,21 +206,28 @@ html, body, #root {
     margin-bottom: 30px;
   }
 
+  .projects-grid {
+    grid-template-columns: 1fr; /* stack one card per row */
+    gap: 15px;                  /* smaller gap */
+  }
+
   .project-card {
     height: auto; /* remove fixed height */
   }
 
   .card-front,
   .card-back {
-    position: relative; /* stop overlapping issues */
+    position: relative; /* prevent overlapping */
     height: auto;
     justify-content: flex-start;
     padding: 15px;
   }
 
   .card-front img {
-    height: auto; /* let images scale naturally */
+    width: 100%;
+    height: auto;       /* responsive images */
     max-height: 180px;
+    object-fit: cover;
   }
 
   .card-front h2,
