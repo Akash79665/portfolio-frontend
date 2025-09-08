@@ -261,3 +261,72 @@ html, body, #root {
     padding: 8px;
   }
 }
+
+/* Portrait mobile screens */
+
+
+@media (max-width: 480px) {
+  .home-container {
+    padding: 30px 8px; /* smaller padding */
+  }
+
+  .home-container h1 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* smaller vertical gap */
+    align-items: center;
+  }
+
+  .project-card {
+    width: 100%;
+    height: auto; /* dynamic height for portrait */
+  }
+
+  .card-inner {
+    height: auto;
+  }
+
+  .card-front,
+  .card-back {
+    position: relative;
+    height: auto;
+    justify-content: flex-start;
+    padding: 12px;
+  }
+
+  .card-front img {
+    width: 100%;
+    height: auto;
+    max-height: 140px; /* smaller image for portrait */
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .card-front h2,
+  .card-back h2 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .project-desc li {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .links a {
+    width: 100%;
+    justify-content: center;
+    padding: 6px 0;
+    font-size: 0.85rem;
+  }
+}
