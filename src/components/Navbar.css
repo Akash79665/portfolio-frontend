@@ -1,8 +1,8 @@
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* ✅ keep original placement */
-  flex-wrap: nowrap;           /* ✅ prevent wrapping on desktop */
+  justify-content: flex-start; /* keep original placement */
+  flex-wrap: nowrap;           /* prevent wrapping on desktop */
   padding: 12px 30px;
   background-color: #0F0E0E; /* Dark navy */
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
@@ -15,7 +15,7 @@
 .nav-link {
   color: #f1f5f9; 
   text-decoration: none;
-  margin-right: 20px;    /* ✅ restore original spacing */
+  margin-right: 20px;    
   padding: 8px 20px;
   border-radius: 8px;
   font-weight: 500;
@@ -53,20 +53,28 @@
   z-index: 1; 
 }
 
-/* ✅ Responsive tweaks */
+/* -------------------- MOBILE RESPONSIVE -------------------- */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;  /* stack items */
-    align-items: center;     /* center only in mobile */
-    flex-wrap: wrap;         /* allow wrapping on small screens */
-    padding: 15px 20px;
+    justify-content: center; /* center links horizontally */
+    flex-direction: row;     /* keep items in a row */
+    flex-wrap: nowrap;       /* prevent stacking vertically */
+    overflow-x: auto;        /* scroll if too many links */
+    padding: 12px 15px;
   }
 
   .nav-link {
-    width: 100%;
-    text-align: center;
-    margin: 6px 0;   
-    padding: 10px;
-    font-size: 1rem;
+    margin: 0 8px;           /* smaller gap between links */
+    padding: 8px 12px;
+    font-size: 0.9rem;       /* adjust size for mobile */
+  }
+
+  /* Optional: hide scrollbar visually but allow scroll */
+  .navbar::-webkit-scrollbar {
+    display: none;
+  }
+  .navbar {
+    -ms-overflow-style: none;  /* IE 10+ */
+    scrollbar-width: none;     /* Firefox */
   }
 }
